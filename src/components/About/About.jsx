@@ -1,10 +1,38 @@
-import React from 'react';
-import '../../index.css';
+import { gql, useQuery } from '@apollo/client';
+import { useAuthenticated } from '@nhost/react';
+
+const GET_USERS = gql`
+  query getAllUsers {
+    user_info {
+      first_name
+      last_name
+    }
+  }
+`;
 
 function About() {
+  const isAuthenticated = useAuthenticated();
+  const { loading, data, error } = useQuery(GET_USERS);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return <div>You must be authenticated to see this page</div>;
+  }
+
+  if (error) {
+    return <div>Error in the query {error.message}</div>;
+  }
+
   return (
-    <div className="grid justify-items-center">
-      <p>About page</p>
+    <div>
+      <ul>
+        {data?.map((book) => (
+          <li key={book.id}>{book.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }

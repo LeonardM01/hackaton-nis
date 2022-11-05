@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <NhostReactProvider nhost={nhost}>
     <NhostApolloProvider nhost={nhost}>
-      <App nhost={nhost} />
+      <App />
     </NhostApolloProvider>
   </NhostReactProvider>,
 );

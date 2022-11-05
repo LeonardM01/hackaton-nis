@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { useSignUpEmailPassword } from '@nhost/react';
 import { COLORS } from '../../assets/theme';
 
-function Register({ nhost }) {
+function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigation = useNavigate();
-  const { signUpEmailPassword, isLoading, isSuccess, needsEmailVerification, isError, error } = useSignUpEmailPassword();
+  const { signUpEmailPassword, isLoading, isSuccess, needsEmailVerification } = useSignUpEmailPassword();
   const disableForm = isLoading || needsEmailVerification;
 
   const onClickBack = () => {
@@ -30,14 +30,14 @@ function Register({ nhost }) {
     }
     // console.log(isSuccess);
     if (isSuccess) {
-      navigation('/home');
+      navigation('/verification');
     }
   };
 
   return (
     <div>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-      <button onClick={onClickBack} className="grid justify-content-left" type="button"><ChevronLeftIcon className="h-12 pl-4 mt-8" /></button>
+      <button onClick={onClickBack} className="grid justify-content-left" type="button"><ChevronLeftIcon className="h-10 pl-4 mt-8" /></button>
       <h1 className="text-4xl text-left font-bold mt-12 px-6">Hello! Register to get started</h1>
       <div className="grid justify-items-center mt-8">
         <form className="grid justify-items-center">

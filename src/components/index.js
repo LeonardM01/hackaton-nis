@@ -4,3 +4,4 @@ export { default as LandingPage } from './Landing Page/LandingPage';
 export { default as Home } from './Home/Home';
 export { default as Register } from './Register/Register';
 export { default as ProtectedRoute } from './Protected Route/ProtectedRoute';
+export { default as Verification } from './Verification/Verification';

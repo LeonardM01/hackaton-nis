@@ -5,17 +5,18 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom';
-import { Login, About, LandingPage, Home, Register, ProtectedRoute } from './index';
+import { Login, About, LandingPage, Home, Register, ProtectedRoute, Verification } from './index';
 
-function App({ nhost }) {
+function App() {
   return (
     <main>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
-          <Route path="/login" element={<Login nhost={nhost} />} />
-          <Route path="/register" element={<Register nhost={nhost} />} />
+          <Route path="/verification" element={<Verification />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>

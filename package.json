@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@heroicons/react": "^2.0.13",
+    "@mui/material": "^5.10.12",
     "@nhost/react": "^0.14.1",
     "@nhost/react-apollo": "^4.8.1",
     "@testing-library/jest-dom": "^5.16.5",

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../index.css';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
-import { useSignInEmailPassword, useAuthenticationStatus } from '@nhost/react';
+import { useSignInEmailPassword } from '@nhost/react';
 import { COLORS } from '../../assets/theme';
 
 function Login() {
@@ -10,9 +10,8 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigation = useNavigate();
 
-  const { signInEmailPassword, isLoading, isSuccess, needsEmailVerification, isError, error } = useSignInEmailPassword();
+  const { signInEmailPassword, isLoading, isSuccess, needsEmailVerification } = useSignInEmailPassword();
   const disableForm = isLoading || needsEmailVerification;
-
 
   const onChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -41,7 +40,7 @@ function Login() {
   return (
     <div>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-      <button onClick={onClickBack} className="grid justify-content-left" type="button"><ChevronLeftIcon className="h-12 pl-4 mt-8" /></button>
+      <button onClick={onClickBack} className="grid justify-content-left" type="button"><ChevronLeftIcon className="h-10 pl-4 mt-8" /></button>
       <h1 className="text-4xl text-left font-bold mt-12 px-6">Welcome back! Glad to see you again!</h1>
       <div className="grid justify-items-center mt-16">
         <form className="grid justify-items-center">
@@ -52,7 +51,9 @@ function Login() {
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Enter your email"
             value={email}
-            onChange={onChangeEmail} />
+            onChange={onChangeEmail}
+            required
+          />
           <input
             disabled={disableForm}
             type="password"
@@ -60,7 +61,9 @@ function Login() {
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Enter your password"
             value={password}
-            onChange={onChangePassword} />
+            onChange={onChangePassword}
+            required
+          />
         </form>
       </div>
       <div className="grid">

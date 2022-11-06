@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import '../../index.css';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { COLORS } from '../../assets/theme';
 
 function Login({ auth }) {
-  const [email, setEmail] = useState('');
+  const [emailLogging, setEmailLogging] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigate();
 
-
-
   const onChangeEmail = (event) => {
-    setEmail(event.target.value);
+    setEmailLogging(event.target.value);
   };
 
   const onChangePassword = (event) => {
@@ -29,11 +27,10 @@ function Login({ auth }) {
   };
 
   const onClickLogin = async () => {
-    await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log(userCredential);
+    await signInWithEmailAndPassword(auth, emailLogging, password)
+      .then(async (userCredential) => {
+        // Signed in
+        const { user } = userCredential;
         navigation('/home');
       })
       .catch((error) => {
@@ -53,7 +50,7 @@ function Login({ auth }) {
             className="outline-1 p-4 my-4 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Enter your email"
-            value={email}
+            value={emailLogging}
             onChange={onChangeEmail}
             required
           />

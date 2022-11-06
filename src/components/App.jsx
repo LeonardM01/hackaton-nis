@@ -20,6 +20,7 @@ function App({ auth }) {
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
+
     </main>
   );
 }

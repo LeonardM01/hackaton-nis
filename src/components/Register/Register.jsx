@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { useNavigate } from 'react-router-dom';
 import { COLORS } from '../../assets/theme';
@@ -12,7 +12,6 @@ function Register({ auth }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigation = useNavigate();
-  const disableForm = isLoading || needsEmailVerification;
 
   const onClickBack = () => {
     navigation('/');
@@ -22,15 +21,13 @@ function Register({ auth }) {
     if (password === confirmPassword) {
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Signed in 
+          // Signed in
           navigation('/verification');
-          const user = userCredential.user;
-
+          const { user } = userCredential;
         })
         .catch((error) => {
           console.log(error.message);
         });
-
     }
   };
 
@@ -56,7 +53,6 @@ function Register({ auth }) {
             className="outline-1 p-4 my-2 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Last name"
-            disabled={disableForm}
           />
           <input
             value={email}
@@ -65,7 +61,6 @@ function Register({ auth }) {
             className="outline-1 p-4 my-2 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Email"
-            disabled={disableForm}
           />
           <input
             value={password}
@@ -74,7 +69,6 @@ function Register({ auth }) {
             className="outline-1 p-4 my-2 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Password"
-            disabled={disableForm}
           />
           <input
             value={confirmPassword}
@@ -83,7 +77,6 @@ function Register({ auth }) {
             className="outline-1 p-4 my-2 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
             placeholder="Confirm password"
-            disabled={disableForm}
           />
         </form>
       </div>
@@ -97,7 +90,7 @@ function Register({ auth }) {
           Register
         </button>
         <p
-          className="bottom-0 justify-self-center fixed text-center"
+          className="bottom-4 justify-self-center fixed text-center"
         >
           Already have an account?
           <span style={{ color: COLORS.primary }} onClick={() => { navigation('/login'); }}> Login now</span>

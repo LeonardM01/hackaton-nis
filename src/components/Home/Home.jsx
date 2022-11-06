@@ -35,10 +35,10 @@ function Home() {
       <div id="gore" className="grid grid-cols-2 justify-items-start">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzekZyyLNm25qRHjcSRRnSL7q0ZYo3vmDpfEaLBY4&s"
-          className="h-16 mt-10 ml-6 justify-self-start rounded-full"
+          className="h-14 mt-10 ml-6 justify-self-start rounded-full"
           alt="profile picture"
         />
-        <h1 className="mt-12 text-3xl font-bold fixed left-24">Hi, Filip!</h1>
+        <h1 className="mt-12 text-4xl font-bold fixed left-24">Hi, Filip!</h1>
         <div className="mt-12 text-right font-bold text-3xl ml-20 w-fit grid-cols-2 grid">
           <p className="w-full">200</p>
           <img src={token} className="h-8 mt-1 ml-2" alt="token" />
@@ -57,23 +57,23 @@ function Home() {
           <button
             className="z-10"
             onClick={() => setFilter('Home')}
-          ><HOME_BUTTON color={filter === 'Home' ? (COLORS.secondary) : (COLORS.gray)} />
+          ><HOME_BUTTON color={filter === 'Home' ? (COLORS.secondary) : ('#849293')} />
           </button>
           <button
             className="z-10"
             onClick={() => setFilter('Ride')}
-          ><RIDE_BUTTON color={filter === 'Ride' ? (COLORS.secondary) : (COLORS.gray)} />
+          ><RIDE_BUTTON color={filter === 'Ride' ? (COLORS.secondary) : ('#849293')} />
           </button>
           <button
             className="z-10"
             onClick={() => setFilter('User')}
-          ><USER_BUTTON color={filter === 'User' ? (COLORS.secondary) : (COLORS.gray)} />
+          ><USER_BUTTON color={filter === 'User' ? (COLORS.secondary) : ('#849293')} />
           </button>
           <button
             disabled
             className="z-10"
             onClick={() => setFilter('Settings')}
-          ><SETTINGS_BUTTON color={filter === 'Settings' ? (COLORS.secondary) : (COLORS.gray)} />
+          ><SETTINGS_BUTTON color={filter === 'Settings' ? (COLORS.secondary) : ('#849293')} />
           </button>
         </div>
         <div className="fixed bottom-10 grid left-[38.5%]">

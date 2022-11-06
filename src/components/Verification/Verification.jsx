@@ -30,13 +30,12 @@ function Verification() {
               </button>
               <h1 className="text-4xl text-left font-bold mt-12">Upload photo</h1>
               <p className="text-left mt-4" style={{ color: '#6A707C' }}>Please upload a selfie so we can verify your identity</p>
-              <div className="grid justify-items-start mt-10">
+              <div className="grid justify-items-start mt-20">
                 <label
-                  className="justify-self-center cursor-pointer outline-2 outline-gray rounded-full w-44 h-44 grid py-12"
+                  className="justify-self-center cursor-pointer outline-2 outline-gray rounded-full w-72 h-72 grid py-20"
                   style={{ backgroundColor: COLORS.gray }}
                 >
-                  <UserIcon className="h-12 justify-self-center" style={{ color: '#849293' }} />
-                  <p className="justify-self-center" style={{ color: '#849293' }}>Upload photo</p>
+                  <UserIcon className="h-28 justify-self-center" style={{ color: '#849293' }} />
                   <input type="file" className="hidden" />
                 </label>
               </div>

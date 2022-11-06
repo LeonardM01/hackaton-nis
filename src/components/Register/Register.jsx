@@ -33,7 +33,6 @@ function Register({ auth }) {
 
   return (
     <div>
-      {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       <button onClick={onClickBack} className="grid justify-content-left" type="button"><ChevronLeftIcon className="h-10 pl-4 mt-8" /></button>
       <h1 className="text-4xl text-left font-bold mt-12 px-6">Hello! Register to get started</h1>
       <div className="grid justify-items-center mt-8">

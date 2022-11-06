@@ -2,6 +2,9 @@
   "name": "hackaton-nis",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.17.0"
+  },
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@emotion/react": "^11.10.5",

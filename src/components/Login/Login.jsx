@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import '../../index.css';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
-import { useSignInEmailPassword } from '@nhost/react';
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { COLORS } from '../../assets/theme';
 
-function Login() {
+function Login({ auth }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigate();
 
-  const { signInEmailPassword, isLoading, isSuccess, needsEmailVerification } = useSignInEmailPassword();
-  const disableForm = isLoading || needsEmailVerification;
+
 
   const onChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -30,11 +29,16 @@ function Login() {
   };
 
   const onClickLogin = async () => {
-    // eslint-disable-next-line react/destructuring-assignment
-    await signInEmailPassword(email, password);
-    if (isSuccess) {
-      navigation('/home');
-    }
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(userCredential);
+        navigation('/home');
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -45,7 +49,6 @@ function Login() {
       <div className="grid justify-items-center mt-16">
         <form className="grid justify-items-center">
           <input
-            disabled={disableForm}
             type="text"
             className="outline-1 p-4 my-4 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}
@@ -55,7 +58,6 @@ function Login() {
             required
           />
           <input
-            disabled={disableForm}
             type="password"
             className="outline-1 p-4 my-4 rounded-xl text-2xl"
             style={{ backgroundColor: COLORS.gray, outlineColor: '#E8E8E8' }}

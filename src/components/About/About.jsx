@@ -1,5 +1,4 @@
 import { gql, useQuery } from '@apollo/client';
-import { useAuthenticated } from '@nhost/react';
 
 const GET_USERS = gql`
   query getAllUsers {

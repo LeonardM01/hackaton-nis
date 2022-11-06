@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { useNavigate } from 'react-router-dom';
-import { useSignUpEmailPassword } from '@nhost/react';
 import { COLORS } from '../../assets/theme';
 
-function Register() {
+function Register({ auth }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigation = useNavigate();
-  const { signUpEmailPassword, isLoading, isSuccess, needsEmailVerification } = useSignUpEmailPassword();
   const disableForm = isLoading || needsEmailVerification;
 
   const onClickBack = () => {
@@ -20,17 +20,17 @@ function Register() {
 
   const onClickRegister = async () => {
     if (password === confirmPassword) {
-      await signUpEmailPassword(email, password, {
-        displayName: `${firstName} ${lastName}`.trim(),
-        metadata: {
-          firstName,
-          lastName,
-        },
-      });
-    }
-    // console.log(isSuccess);
-    if (isSuccess) {
-      navigation('/verification');
+      await createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          navigation('/verification');
+          const user = userCredential.user;
+
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+
     }
   };
 

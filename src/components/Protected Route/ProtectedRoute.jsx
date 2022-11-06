@@ -1,4 +1,3 @@
-import { useAuthenticationStatus } from '@nhost/react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 function ProtectedRoute({ children }) {

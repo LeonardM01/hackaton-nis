@@ -5,7 +5,7 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom';
-import { Login, About, LandingPage, Home, Register, ProtectedRoute, Verification } from './index';
+import { Login, LandingPage, Home, Register, ProtectedRoute, Verification } from './index';
 
 function App({ auth }) {
   return (
@@ -17,7 +17,6 @@ function App({ auth }) {
           <Route path="/verification" element={<Verification />} />
           <Route path="/login" element={<Login auth={auth} />} />
           <Route path="/register" element={<Register auth={auth} />} />
-          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
 

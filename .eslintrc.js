@@ -1,7 +1,4 @@
 module.exports = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   env: {
     browser: true,
     es2021: true,

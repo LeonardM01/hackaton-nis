@@ -76,7 +76,7 @@ function Home() {
           ><SETTINGS_BUTTON color={filter === 'Settings' ? (COLORS.secondary) : ('#849293')} />
           </button>
         </div>
-        <div className="fixed bottom-10 grid left-[37%]">
+        <div className="fixed bottom-10 grid left-[38%]">
           <button onClick={handleClick}><PLUS_BUTTON color={COLORS.secondary} /></button>
         </div>
       </div>

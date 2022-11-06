@@ -67,7 +67,7 @@ function Login({ auth }) {
       <div className="grid">
         <p className="pr-16 text-right" style={{ color: '#6A707C' }}>Forgot Password?</p>
         <button onClick={onClickLogin} type="button" className="w-80 rounded-lg my-6 py-4 grid justify-self-center" style={{ backgroundColor: COLORS.black, color: 'white' }}>Login</button>
-        <p className="bottom-4 justify-self-center text-center">Don't have and account? <span style={{ color: COLORS.primary }} onClick={onClickRegister}>Register now</span></p>
+        <p className="justify-self-center text-center">Don't have and account? <span style={{ color: COLORS.primary }} onClick={onClickRegister}>Register now</span></p>
       </div>
     </div>
   );

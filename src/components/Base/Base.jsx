@@ -87,7 +87,7 @@ function Base() {
             src="https://xsgames.co/randomusers/assets/avatars/male/72.jpg"
             className="h-16 rounded-xl"
           />
-          <h3 className="ml-6 font-bold">Arturo Ciechanowski<br /><small className="font-normal">distance ~1.1 km</small></h3>
+          <h3 className="ml-6 font-bold">Arturo Ciel<br /><small className="font-normal">distance ~1.1 km</small></h3>
           { connections.button5 === 'Connect' ? (
             connectButton('button5')
           ) : (

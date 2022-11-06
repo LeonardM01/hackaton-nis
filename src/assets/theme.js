@@ -76,7 +76,7 @@ export function PHONE_ICON() {
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke={COLORS.secondary}
-      className="w-5 h-5 mt-1"
+      className="w-5 h-5"
     >
       <path
         strokeLinecap="round"

@@ -14,8 +14,9 @@ function Users() {
             className="h-16 rounded-xl"
           />
           <h3 className="ml-6 font-bold">Mark Mccahill<br />
-            <small className="font-normal flex items-center my-1">
-              <PHONE_ICON /><p className="mx-2">091 123 6547</p><AT_ICON /><p className="mx-2">test@gmail.com</p>
+            <small className="font-normal justify-items-center items-center my-1">
+              <p className="flex"><PHONE_ICON />091 123 6547</p>
+              <p className="flex"><AT_ICON />test@gmail.com</p>
             </small>
           </h3>
           <button
@@ -32,8 +33,9 @@ function Users() {
             className="h-16 rounded-xl"
           />
           <h3 className="ml-6 font-bold">Galen Hehr<br />
-            <small className="font-normal flex items-center my-1">
-              <PHONE_ICON /><p className="mx-2">091 123 6547</p><AT_ICON /><p className="mx-2">test@gmail.com</p>
+            <small className="font-normal justify-items-center items-center my-1">
+              <p className="flex"><PHONE_ICON />091 123 6547</p>
+              <p className="flex"><AT_ICON />test@gmail.com</p>
             </small>
           </h3>
           <button
@@ -50,8 +52,9 @@ function Users() {
             className="h-16 rounded-xl"
           />
           <h3 className="ml-6 font-bold">Shelby Gilewski<br />
-            <small className="font-normal flex items-center my-1">
-              <PHONE_ICON /><p className="mx-2">091 123 6547</p><AT_ICON /><p className="mx-2">test@gmail.com</p>
+            <small className="font-normal justify-items-center items-center my-1">
+              <p className="flex"><PHONE_ICON />091 123 6547</p>
+              <p className="flex"><AT_ICON />test@gmail.com</p>
             </small>
           </h3>
           <button
@@ -68,8 +71,9 @@ function Users() {
             className="h-16 rounded-xl"
           />
           <h3 className="ml-6 font-bold">Ivan Maduzia<br />
-            <small className="font-normal flex items-center my-1">
-              <PHONE_ICON /><p className="mx-2">091 123 6547</p><AT_ICON /><p className="mx-2">test@gmail.com</p>
+            <small className="font-normal justify-items-center items-center my-1">
+              <p className="flex"><PHONE_ICON />091 123 6547</p>
+              <p className="flex"><AT_ICON />test@gmail.com</p>
             </small>
           </h3>
           <button

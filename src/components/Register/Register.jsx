@@ -89,7 +89,7 @@ function Register({ auth }) {
           Register
         </button>
         <p
-          className="justify-self-center text-center"
+          className="static bottom-4 justify-self-center text-center"
         >
           Already have an account?
           <span style={{ color: COLORS.primary }} onClick={() => { navigation('/login'); }}> Login now</span>
